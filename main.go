@@ -4,10 +4,10 @@ import (
 	"bank/controllers"
 	"bank/helper"
 	"bank/models"
-	"net/http"
-
+	"fmt"
 	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
+	"net/http"
 )
 
 type User struct {
@@ -22,20 +22,20 @@ type JsonResponse struct {
 }
 
 func handlers(router *mux.Router) {
-    helper.PrintMessages("handlers")
-    router.HandleFunc("/", controllers.RenderHomePage).Methods("get")
-    router.HandleFunc("/user/register", controllers.RenderRegisterPage).Methods("get")
+	helper.PrintMessages("handlers")
+	router.HandleFunc("/", controllers.RenderHomePage).Methods("get")
+	router.HandleFunc("/user/register", controllers.RenderRegisterPage).Methods("get")
 }
 
 func main() {
-    db := models.SetupDB()
-    models.InitModel(db)
-    router := mux.NewRouter()
+	fmt.Println("hello")
+	db := models.SetupDB()
+	models.InitModel(db)
+	router := mux.NewRouter()
 
-    // Serve static filss
-    s := http.StripPrefix("/static/", http.FileServer(http.Dir("./static/")))
-    router.PathPrefix("/static/").Handler(s)
-
-    handlers(router)
-    http.ListenAndServe(":3000", router)
+	// Serve static filss
+	s := http.StripPrefix("/static/", http.FileServer(http.Dir("./static/")))
+	router.PathPrefix("/static/").Handler(s)
+	handlers(router)
+	http.ListenAndServe(":3002", router)
 }
