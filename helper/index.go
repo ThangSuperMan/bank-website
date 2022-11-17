@@ -8,3 +8,9 @@ func CheckErr(err error) {
 		panic(err)
 	}
 }
+
+func PrintMessages(message string) {
+	fmt.Println("")
+	fmt.Println(message)
+	fmt.Println("")
+}
