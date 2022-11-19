@@ -5,9 +5,11 @@ import (
 	"bank/helper"
 	"bank/models"
 	"fmt"
+	"net/http"
+	"strconv"
+
 	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
-	"net/http"
 )
 
 type User struct {
@@ -30,12 +32,16 @@ func handlers(router *mux.Router) {
 func main() {
 	fmt.Println("hello")
 	db := models.SetupDB()
+	port := 3002
 	models.InitModel(db)
 	router := mux.NewRouter()
 
 	// Serve static filss
 	s := http.StripPrefix("/static/", http.FileServer(http.Dir("./static/")))
 	router.PathPrefix("/static/").Handler(s)
+
 	handlers(router)
-	http.ListenAndServe(":3002", router)
+	portConnect := ":" + strconv.Itoa(port)
+	fmt.Println("Listenning on the port:", port)
+	http.ListenAndServe(portConnect, router)
 }

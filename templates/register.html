@@ -7,64 +7,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đăng ký</title>
 
+
+  <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+  <!-- Icons  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/static/css/register.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   {{ template "header" }}
 
-  <header>
-    <div>
-      Logo
-    </div>
-    <nav class="navbar">
-      <a href="/">Trang ch·ªß</a>
-      <a href="/about">V·ªÅ OCB</a>
-      <a href="/news">Tin t·ª©c</a>
-      <a href="/apply">Tuy·ªÉn d·ª•ng</a>
-      <a href="/contact">Li√™n h·ªá</a>
-      <a href="/user/register">ƒêƒÉng k√Ω</a>
-      <a href="/user/login"> ƒêƒÉng nh·∫≠p</a>
-    </nav>
-  </header>
+  <div class="register-container">
+    <form method="post" action="#" class="box">
 
-  <form method="post" action="#" class="box">
+      <div class="banner-img">
+        <img class="jpg" id="jpg" src="/static/images/anh6.png">
+      </div>
 
-    <div class="banner-img">
-      <img class="jpg" id="jpg" src="/static/images/anh6.png">
-    </div>
-    <div class="background " id="background">
-      <div class="scroll_button">
-        <H1>Đăng ký</H1>
-        <input type="text" placeholder="SỐ CCCD">
-        <br>
-        <input type="text" placeholder="SỐ THẺ ATM">
-        <br>
-        <input type="text" placeholder="MÃ PIN">
-        <br>
-        <input type="text" placeholder="EMAIL">
-        <br>
-        <input type="text" placeholder="ĐIỆN THOẠI">
-        <br>
-        <div class="container">
-          <input type="password" placeholder=" MẬT KHẨU" required>
-          <!-- <span class="show-btn"><i class="fas fa-eye"></i></span> -->
-        </div>
-        <br>
+      <div class="background " id="background">
+        <div class="scroll_button">
+          <h1>Đăng ký</h1>
+          <input type="text" placeholder="SỐ CCCD">
+          <br>
+          <input type="text" placeholder="SỐ THẺ ATM">
+          <br>
+          <input type="text" placeholder="MÃ PIN">
+          <br>
+          <input type="text" placeholder="EMAIL">
+          <br>
+          <input type="text" placeholder="ĐIỆN THOẠI">
+          <br>
+          <div class="container">
+            <input type="password" placeholder=" MẬT KHẨU" required>
+            <!-- <span class="show-btn"><i class="fas fa-eye"></i></span> -->
+          </div>
+          <br>
 
-        <input type="checkbox">
-        <span>Tôi đồng ý với <a href="">Điều kiện và điều khoản</a>đăng ký và sử dụng dịch vụ ngân hàng điện tử
-          của OCB</span>
-        <br>
-        <input type="submit" value="ĐĂNG KÝ">
+          <input type="checkbox">
+          <span>Tôi đồng ý với <a href="">Điều kiện và điều khoản</a>đăng ký và sử dụng dịch vụ ngân hàng điện tử
+            của OCB</span>
+          <br>
+          <input type="submit" value="ĐĂNG KÝ">
 
-  </form>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="/static/js/main.js"></script>
 
 </body>
 
